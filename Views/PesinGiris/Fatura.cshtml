@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Fatura";
+}
+<style>
+    #grad1 {
+        height: 610px;
+        width: 500px;
+        margin-left: 320px;
+        margin-top: -40px;
+        background-color: #FFF;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("image/cevre-otopark.jpg");
+        background-repeat: no-repeat, no-repeat;
+        background-color: #cccccc;
+    }
+
+    #bilgi p {
+        padding-top: 27px;
+        padding-left: 20px;
+        font-size: 18px;
+    }
+    .button {
+        float: right;
+        background-color: #0F3;
+        color: #FFF;
+        height: 50px;
+        margin-top: 40px;
+        width: 110px;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    .button2 {
+        float: left;
+        margin-top: 40px;
+        background-color: #C00;
+    }
+
+    .button:hover {
+        background-color: #DADADA;
+        color: black;
+    }
+</style>
+
+
+
+
+<div id="grad1">
+    <center><h1 style="color:black">Fatura Bilgisi</h1></center>
+    <br>
+    <div id="bilgi">
+        <form >
+            <p><span style="color:limegreen">Giriş Zamanı:</span> @ViewBag.Giris </p>
+            <br>
+            <p><span style="color:limegreen">Çıkış Zamanı:</span> @ViewBag.Cikis</p>
+            <br>
+            <p><span style="color:limegreen">Toplam Süre:</span> @ViewBag.Gecen</p>
+            <br>
+            <p><span style="color:limegreen">Tutar:</span> @ViewBag.Ucret</p>
+            <br>
+
+
+        </form>
+        <br>
+
+        <button class="button button2" type="submit"><a href="/PesinGiris/PesinGirisEkle"><b>Geri Dön</b></a></button>
+        <button class="button button1" type="submit"><b>Faturayı Yazdır</b></button>
+    </div>
+
+</div>
+

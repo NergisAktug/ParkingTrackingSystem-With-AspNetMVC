@@ -1,0 +1,156 @@
+﻿@model TakipOtoparkSistemi.Models.MusteriGunlukBilgisi
+
+@{
+    ViewBag.Title = "PesinGirisEkle";
+}
+<style>
+    #grad1 {
+        height: 470px;
+        width: 700px;
+        margin-left: -20px;
+        background-color: #FFF;
+        border-radius: 20px;
+        margin-top: -70px;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-repeat: no-repeat, no-repeat;
+        background-color: white;
+        background-image: url("/pesingiris/image/cevre-otopark.jpg");
+    }
+
+    .container {
+        height: 420px;
+        width: 700px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        margin-top: 60px;
+        padding: 20px;
+    }
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    .button {
+        width: 250px;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 20px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+    }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .link
+        {
+            margin-top: 268px;
+        }
+
+    .grid-container {
+        padding: 16px;
+    }
+
+    table, th, td {
+        border: 4px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<div id="grad1">
+    <div class="grid-container" style="margin-left:68px;">
+        <center><h1 style="color:black;">Günlük Müşteri Paneli</h1></center>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.GPlakaNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GPlakaNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GPlakaNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.KonumID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("KonumID", null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.KonumID, "", new { @class = "text-danger" })
+                    <button class="button button1">Araç Giriş</button>
+                </div>
+
+            </div>
+        }
+
+
+        <table style="width:40%;float:right;margin-top:59px;margin-right:50px;">
+            <tr>
+                <th>TARİFE BİLGİSİ</th>
+                <th>ÜCRET</th>
+            </tr>
+            <tr>
+                <th>0-30dk</th>
+                <th>10 TL</th>
+
+            </tr>
+            <tr>
+                <td>30-60dk</td>
+                <td>20 TL</td>
+
+            </tr>
+            <tr>
+                <td>60-120dk</td>
+                <td>30 TL</td>
+
+            </tr>
+            <tr>
+                <td>120-240 dk</td>
+                <td>40 TL</td>
+            </tr>
+
+        </table>
+        <div class="link">
+            @Html.ActionLink("Bos Alanlara Bak", "BosAlanlarıGor", "PesinGiris")<br />
+            @Html.ActionLink("Anasayfaya Dön", "Index", "Home")<br />
+            @Html.ActionLink("Araç Çıkar", "PesinGirisCikar", "PesinGiris")
+
+        </div>
+
+    </div>
+    <p style="float:right;margin-top:10px;color:cornflowerblue;">NOT: 240 dk'yı geçtiğiniz her saat için 10TL Ödemek zorundasınız..</p>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

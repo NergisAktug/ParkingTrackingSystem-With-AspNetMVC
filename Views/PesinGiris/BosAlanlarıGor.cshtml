@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TakipOtoparkSistemi.Models.BosOlans>
+
+@{
+    ViewBag.Title = "BosAlanlarıGor";
+}
+
+<h2>BosAlanlarıGor</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KonumId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KonumAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KonumId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KonumAdi)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<TakipOtoparkSistemi.Models.MusteriAylıkBilgisi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #333;
+        background-image: url("/aracislemleri/image/cevre-otopark.jpg");
+        color: white;
+    }
+</style>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.APlakaNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TcNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Renk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KonumID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaifeID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.APlakaNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TcNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Renk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KonumID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaifeID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AylikID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AylikID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AylikID })
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+@Html.ActionLink("Back to List", "Create")

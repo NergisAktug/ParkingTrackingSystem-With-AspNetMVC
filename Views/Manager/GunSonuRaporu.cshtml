@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "GunSonuRaporu";
+}
+<style>
+    #grad1 {
+        height: 590px;
+        width: 500px;
+        margin-left: 320px;
+        background-color: #FFF;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("/gunsonu/image/cevre-otopark.jpg");
+        background-repeat: no-repeat, no-repeat;
+        background-color: #cccccc;
+    }
+
+    #bilgi p {
+        padding-top: 40px;
+        padding-left: 20px;
+        font-size: 24px;
+    }
+
+    #bilgi button {
+        float: right;
+        padding-top: 10px;
+        background-color: #0F0;
+        color: #FFF;
+        height: 50px;
+        width: 110px;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+</style>
+<center><h1 style="color:#FFF">Gün Sonu Raporu</h1></center>
+
+<div id="grad1">
+    <div id="bilgi">
+        <form action="#">
+            <p>İçerideki Araç Sayısı: @ViewBag.iceri</p>
+            <br>
+            <p>Çıkan Araç Sayısı:@ViewBag.cikis</p>     
+            <br>
+            <br>
+            <p>Kasa Durumu:@ViewBag.toplamBorc</p>
+            <br>
+
+
+        </form>
+        <br>
+        <button type="button"><a href="/Manager/LoginYonetici">Geri Dön</a></button>
+    </div>
+
+</div>
+

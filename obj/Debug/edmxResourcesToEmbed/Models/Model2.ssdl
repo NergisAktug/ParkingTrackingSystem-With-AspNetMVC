@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OtoparkTakipSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BosOlans">
+    <Key>
+      <PropertyRef Name="KonumId" />
+    </Key>
+    <Property Name="KonumId" Type="int" Nullable="false" />
+    <Property Name="KonumAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EkSureBilgisi">
+    <Key>
+      <PropertyRef Name="SureID" />
+    </Key>
+    <Property Name="SureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sure" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KasaBilgisi">
+    <Key>
+      <PropertyRef Name="KasaID" />
+    </Key>
+    <Property Name="KasaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VardiyaID" Type="int" Nullable="false" />
+    <Property Name="AylikBorc" Type="int" Nullable="false" />
+    <Property Name="EkUcret" Type="int" Nullable="false" />
+    <Property Name="ToplamBorc" Type="int" Nullable="false" />
+    <Property Name="OdenenBorc" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KonumBilgisi">
+    <Key>
+      <PropertyRef Name="KonumID" />
+    </Key>
+    <Property Name="KonumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KonumAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MusteriAylıkBilgisi">
+    <Key>
+      <PropertyRef Name="AylikID" />
+    </Key>
+    <Property Name="AylikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="APlakaNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TcNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marka" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Renk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KonumID" Type="int" Nullable="false" />
+    <Property Name="TaifeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MusteriGunlukBilgisi">
+    <Key>
+      <PropertyRef Name="GunlukID" />
+    </Key>
+    <Property Name="GunlukID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GPlakaNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KonumID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TarifeBilgisi">
+    <Key>
+      <PropertyRef Name="TarifeID" />
+    </Key>
+    <Property Name="TarifeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tarife" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Borc" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VardiyaBilgisi">
+    <Key>
+      <PropertyRef Name="VardiyaID" />
+    </Key>
+    <Property Name="VardiyaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AylikID" Type="int" Nullable="false" />
+    <Property Name="GunlukID" Type="int" Nullable="false" />
+    <Property Name="GirisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="CikisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="GecenSure" Type="datetime" Nullable="false" />
+    <Property Name="SureID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yonetici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanici" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OtoparkTakipSistemiModelStoreContainer">
+    <EntitySet Name="BosOlans" EntityType="Self.BosOlans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EkSureBilgisi" EntityType="Self.EkSureBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KasaBilgisi" EntityType="Self.KasaBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KonumBilgisi" EntityType="Self.KonumBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MusteriAylıkBilgisi" EntityType="Self.MusteriAylıkBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MusteriGunlukBilgisi" EntityType="Self.MusteriGunlukBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TarifeBilgisi" EntityType="Self.TarifeBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VardiyaBilgisi" EntityType="Self.VardiyaBilgisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yonetici" EntityType="Self.Yonetici" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

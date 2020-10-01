@@ -1,0 +1,89 @@
+﻿@model TakipOtoparkSistemi.Models.MusteriAylıkBilgisi
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #333;
+        background-image: url("/aracislemleri/image/cevre-otopark.jpg");
+        color: white;
+    }
+</style>
+<div>
+    <h4>MusteriAylıkBilgisi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.APlakaNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APlakaNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TcNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TcNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KonumID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KonumID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaifeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaifeID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AylikID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

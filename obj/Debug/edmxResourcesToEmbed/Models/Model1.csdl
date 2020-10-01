@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OtoparkTakipSistemiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BosOlans">
+    <Key>
+      <PropertyRef Name="KonumId" />
+    </Key>
+    <Property Name="KonumId" Type="Int32" Nullable="false" />
+    <Property Name="KonumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EkSureBilgisi">
+    <Key>
+      <PropertyRef Name="SureID" />
+    </Key>
+    <Property Name="SureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fiyat" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KasaBilgisi">
+    <Key>
+      <PropertyRef Name="KasaID" />
+    </Key>
+    <Property Name="KasaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VardiyaID" Type="Int32" Nullable="false" />
+    <Property Name="AylikBorc" Type="Int32" Nullable="false" />
+    <Property Name="EkUcret" Type="Int32" Nullable="false" />
+    <Property Name="ToplamBorc" Type="Int32" Nullable="false" />
+    <Property Name="OdenenBorc" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KonumBilgisi">
+    <Key>
+      <PropertyRef Name="KonumID" />
+    </Key>
+    <Property Name="KonumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KonumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MusteriAylıkBilgisi">
+    <Key>
+      <PropertyRef Name="AylikID" />
+    </Key>
+    <Property Name="AylikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="APlakaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Marka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Renk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KonumID" Type="Int32" Nullable="false" />
+    <Property Name="TaifeID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MusteriGunlukBilgisi">
+    <Key>
+      <PropertyRef Name="GunlukID" />
+    </Key>
+    <Property Name="GunlukID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GPlakaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KonumID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TarifeBilgisi">
+    <Key>
+      <PropertyRef Name="TarifeID" />
+    </Key>
+    <Property Name="TarifeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tarife" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Borc" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VardiyaBilgisi">
+    <Key>
+      <PropertyRef Name="VardiyaID" />
+    </Key>
+    <Property Name="VardiyaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AylikID" Type="Int32" Nullable="false" />
+    <Property Name="GunlukID" Type="Int32" Nullable="false" />
+    <Property Name="GirisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CikisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GecenSure" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SureID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yonetici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="veritabanil" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BosOlans" EntityType="Self.BosOlans" />
+    <EntitySet Name="EkSureBilgisi" EntityType="Self.EkSureBilgisi" />
+    <EntitySet Name="KasaBilgisi" EntityType="Self.KasaBilgisi" />
+    <EntitySet Name="KonumBilgisi" EntityType="Self.KonumBilgisi" />
+    <EntitySet Name="MusteriAylıkBilgisi" EntityType="Self.MusteriAylıkBilgisi" />
+    <EntitySet Name="MusteriGunlukBilgisi" EntityType="Self.MusteriGunlukBilgisi" />
+    <EntitySet Name="TarifeBilgisi" EntityType="Self.TarifeBilgisi" />
+    <EntitySet Name="VardiyaBilgisi" EntityType="Self.VardiyaBilgisi" />
+    <EntitySet Name="Yonetici" EntityType="Self.Yonetici" />
+  </EntityContainer>
+</Schema>

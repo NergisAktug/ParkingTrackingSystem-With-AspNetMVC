@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+
+    .ctn {
+        width: 100%;
+        height: auto;
+        margin-top: 97px;
+    }
+
+        .ctn img {
+            left: 20%;
+            width: 1000;
+            height: 1550;
+            position: absolute;
+        }
+
+        .ctn .btn {
+            position: relative;
+            margin-top: 5%;
+            top: 25%;
+            left: 163px;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #D3CFCB;
+            color: black;
+            font-size: 20px;
+            padding: 7px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            width: 50%
+        }
+
+            .ctn .btn:hover {
+                background-color: black;
+                color: white;
+            }
+</style>
+<div align="center" class="ctn">
+    <center><h2>Otopark Takip Sistemi</h2></center>
+    <div style="align-content: center">
+        <img src="/index/image/otop.jpg" class="img-fluid" alt="Responsive image">
+        <form action="/Manager/YoneticiGiris">
+            <input type="submit" class="btn btn-primary" name="name" value="Yönetici Girişi" />
+        </form>
+        <form action="/VardiyaAylikBilgisis/AylikMusteriGiris" >
+            <input type="submit" class="btn btn-primary" name="name" value="Aylık Müşteri Girişi" />
+        </form>
+        <form action="/PesinGiris/PesinGirisEkle" >
+            <input type="submit" class="btn btn-primary" name="name" value="Günlük Müşteri(Peşin) Girişi" />
+        </form>
+    </div>
+</div>
